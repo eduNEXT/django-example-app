@@ -1,0 +1,13 @@
+#Global ignored files
+build/
+.vagrant/
+db/
+*.pyc
+*.dump
+
+# Assets pipeline managed by gulp
+app/static/*
+app/assets/bower_components/
+app/assets/node_modules/
+app/assets/vendor/
+app/assets/dist/

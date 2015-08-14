@@ -1,0 +1,18 @@
+Hello dear humans.txt reader.
+
+
+/* TEAM */
+
+felipe.montoya@edunext.co
+juan.montoya@edunext.co
+jhony.avella@edunext.co
+leonardo.quinonez@edunext.co
+daniel.naranjo@edunext.co
+
+
+/* SITE */
+
+Last update: 2015.02.~ (Not too up to date)
+Standards: HTML5, CSS3,..
+Components: Modernizr, jQuery, html5shiv, googlefonts.
+Software: django 1.7

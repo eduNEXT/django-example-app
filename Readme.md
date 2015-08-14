@@ -1,0 +1,1 @@
+# Template django application
