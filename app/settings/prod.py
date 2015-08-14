@@ -12,7 +12,7 @@ from common import *
 ########## JSON CONFIGURATION
 
 
-SERVICE_NAME = 'django'
+SERVICE_NAME = 'djangoapp'
 CONFIG_ROOT = environ.get('CONFIG_ROOT', dirname(SITE_ROOT))
 
 with open(join(CONFIG_ROOT, SERVICE_NAME) + ".auth.yaml") as auth_file:
