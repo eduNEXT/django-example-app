@@ -117,7 +117,7 @@ STATIC_ROOT = ENV_TOKENS.get('STATIC_ROOT', STATIC_ROOT)
 
 
 ########## COMPRESSION CONFIGURATION
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False
 
 # See: http://django_compressor.readthedocs.org/en/latest/settings/#django.conf.settings.COMPRESS_OFFLINE
 COMPRESS_OFFLINE = True
