@@ -1,11 +1,11 @@
 """Production settings and globals."""
 
-import json
+import yaml
 
 
 from os import environ
 
-from os.path import abspath, basename, dirname, join, normpath
+from os.path import dirname, join
 from common import *
 
 
@@ -15,11 +15,11 @@ from common import *
 SERVICE_NAME = 'django'
 CONFIG_ROOT = environ.get('CONFIG_ROOT', dirname(SITE_ROOT))
 
-with open(join(CONFIG_ROOT, SERVICE_NAME) + ".auth.json") as auth_file:
-    AUTH_TOKENS = json.load(auth_file)
+with open(join(CONFIG_ROOT, SERVICE_NAME) + ".auth.yaml") as auth_file:
+    AUTH_TOKENS = yaml.load(auth_file)
 
-with open(join(CONFIG_ROOT, SERVICE_NAME) + ".env.json") as env_file:
-    ENV_TOKENS = json.load(env_file)
+with open(join(CONFIG_ROOT, SERVICE_NAME) + ".env.yaml") as env_file:
+    ENV_TOKENS = yaml.load(env_file)
 ########## END JSON CONFIGURATION
 
 ########## EMAIL CONFIGURATION
