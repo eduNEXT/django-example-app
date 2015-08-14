@@ -7,32 +7,21 @@ from django.views.generic import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
-from app.djangoapps.counter.views import VisitorCounter, UserActivityEndPoint, HeartBeat
-# from rest_framework.routers import DefaultRouter
-
-#admin.autodiscover()
-
-# router = DefaultRouter()
-# router.register(r'activity', UserActivityViewSet)
+admin.autodiscover()
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
+    # Tech
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'), name="robots.txt"),
+    url(r'^humans\.txt$', TemplateView.as_view(template_name='humans.txt', content_type='text/plain'), name="humans.txt"),
+    url(r'^$', TemplateView.as_view(template_name='main.html'), name="main"),
 
-                       # Tech
-                       url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain'), name="robots.txt"),
-                       url(r'^humans\.txt$', TemplateView.as_view(template_name='humans.txt', content_type='text/plain'), name="humans.txt"),
-                       url(r'^favicon\.ico$', RedirectView.as_view(url=(settings.STATIC_URL + 'ico/favicon.ico')), name="favicon.ico"),
-                       # url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
+    # Django apps
 
-                       # Django apps
-                       url(r'^counter/(?P<path>.*)$', VisitorCounter.as_view(), name='counter_endpoint'),
-                       url(r'^usercount/$', UserActivityEndPoint.as_view(), name='counter_printpoint'),
-                       url(r'^heartbeat/$', HeartBeat.as_view(), name='heartbeat'),
-
-                       # Admin panel and documentation:
-                       url(r'^admin/', include(admin.site.urls)),
-                       # url(r'^', include(router.urls)),
-                       )
+    # Admin panel and documentation:
+    url(r'^admin/', include(admin.site.urls)),
+)
 
 urlpatterns += staticfiles_urlpatterns()
 
